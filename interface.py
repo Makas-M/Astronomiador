@@ -1,6 +1,14 @@
 from tkinter import*
+from tkinter import messagebox
 
+def abrir_arquivo():
+    print("Arquivo aberto")
+    
+def sair():
+    janela.quit()
 
+def Info():
+    messagebox.showinfo("Info", "Desenvolvido por: Antonio Fernando Macaringue")
 
 def Impdados():
     grau = int(latG.get())
@@ -56,6 +64,22 @@ latS.place(x= 250, y=40, width=40, height=20)
 
 Button(janela, text="Verificar", command=Impdados).place(x=200, y=80, width=100, height=40)
 janela.resizable(0,0)
+
+
+
+barra_menu = Menu(janela)
+janela.config(menu=barra_menu)
+
+menu_arquivo = Menu(barra_menu)
+menu_arquivo.add_command(label="Abrir", command=abrir_arquivo)
+menu_arquivo.add_command(label="Sair", command=sair)
+barra_menu.add_cascade(label="Arquivo", menu=menu_arquivo)
+
+menu_ajuda = Menu(barra_menu)
+menu_ajuda.add_command(label="Info", command=Info)
+barra_menu.add_cascade(label="Info", menu=menu_ajuda)
+
+
 janela.mainloop()
 
 
