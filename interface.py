@@ -1,6 +1,9 @@
 from tkinter import*
 from tkinter import messagebox
 
+
+
+
 def abrir_arquivo():
     print("Arquivo aberto")
     
@@ -25,7 +28,7 @@ def Impdados():
         declinacao = (90 + lat)
         Label(janela, text="e invisivel para a declinacao maior ou igual a: " + str(declinacao), 
       background="#dde", foreground="#009", anchor=N).place(x=10, y=140, width=500, height=40)
-    if ( lat > 0) :
+    if ( lat > 0):
         declinacao = (90 - lat)
         Label(janela, text="A Estrela esta visivel para declinacao maior ou igual a: " + str(declinacao), 
       background="#dde", foreground="#009", anchor=N).place(x=10, y=120, width=500, height=40)
@@ -33,7 +36,6 @@ def Impdados():
         declinacao = -(90 - lat)
         Label(janela, text="e invisivel para a declinacao menor ou igual a: " + str(declinacao), 
       background="#dde", foreground="#009", anchor=N).place(x=10, y=140, width=500, height=40)
-        
         
 janela = Tk()
 janela.geometry("500x300")
@@ -61,7 +63,6 @@ latS.pack()
 latS.place(x= 250, y=40, width=40, height=20)
 
 
-
 Button(janela, text="Verificar", command=Impdados).place(x=200, y=80, width=100, height=40)
 janela.resizable(0,0)
 
@@ -79,12 +80,4 @@ menu_ajuda = Menu(barra_menu)
 menu_ajuda.add_command(label="Info", command=Info)
 barra_menu.add_cascade(label="Info", menu=menu_ajuda)
 
-
 janela.mainloop()
-
-
-
-
-
-
-
